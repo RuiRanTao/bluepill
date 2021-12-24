@@ -1,0 +1,9 @@
+iic_dup.c:34:6:iic_start	8	static
+iic_dup.c:54:6:iic_stop	8	static
+iic_dup.c:74:6:iic_sendbyte	24	static
+iic_dup.c:111:9:iic_readbyte	16	static
+iic_dup.c:145:9:iic_wait_ack	16	static
+iic_dup.c:176:6:iic_ack	8	static
+iic_dup.c:194:6:iic_nack	8	static
+iic_dup.c:213:9:iic_check_device_status	24	static
+iic_dup.c:238:13:iic_delay	16	static

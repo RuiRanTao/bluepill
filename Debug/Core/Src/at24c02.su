@@ -1,0 +1,7 @@
+at24c02.c:40:6:AT24C02_iic_test	8	static
+at24c02.c:69:6:AT24C02_read_data	32	static
+at24c02.c:127:6:AT24C02_write_data	24	static
+at24c02.c:190:13:AT24C02_read_test	16	static
+at24c02.c:210:13:AT24C02_write_test	16	static
+at24c02.c:235:13:AT24C02_erase_test	16	static
+at24c02.c:261:13:AT24C02_error_handle	8	static
