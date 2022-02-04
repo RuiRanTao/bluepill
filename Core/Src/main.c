@@ -125,8 +125,6 @@ int main(void)
 //	  HAL_RCC_GetHCLKFreq()/1000000;		// 1us中断一次，即HAL_Delay函数延时基准为1us
 	HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);  // 配置并启动系统滴答定时器
 
-//  TIM_PWM_START();
-
   /* USER CODE END 2 */
 
   /* Infinite loop */

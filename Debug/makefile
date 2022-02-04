@@ -12,7 +12,6 @@ RM := rm -rf
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
--include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -61,8 +60,8 @@ all: main-build
 main-build: project_01.elf secondary-outputs
 
 # Tool invocations
-project_01.elf: $(OBJS) $(USER_OBJS) C:\Users\taowu\STM32CubeIDE\workspace_1.7.0\project_01\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "project_01.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\taowu\STM32CubeIDE\workspace_1.7.0\project_01\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="project_01.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+project_01.elf: $(OBJS) $(USER_OBJS) /Users/uv/STM32CubeIDE/workspace_1.7.0/project_01/STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "project_01.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/Users/uv/STM32CubeIDE/workspace_1.7.0/project_01/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="project_01.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -83,7 +82,7 @@ project_01.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 
 # Other Targets
 clean:
-	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) project_01.elf
+	-$(RM) default.size.stdout project_01.bin project_01.elf project_01.list
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
@@ -95,6 +94,6 @@ fail-specified-linker-script-missing:
 warn-no-linker-script-specified:
 	@echo 'Warning: No linker script specified. Check the linker settings in the build configuration.'
 
-.PHONY: all clean dependents fail-specified-linker-script-missing warn-no-linker-script-specified
+.PHONY: all clean dependents main-build fail-specified-linker-script-missing warn-no-linker-script-specified
 
 -include ../makefile.targets
