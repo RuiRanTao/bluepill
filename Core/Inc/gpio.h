@@ -6,11 +6,7 @@
   ******************************************************************************
   * @attention
   *
-<<<<<<< HEAD
   * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
-=======
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
->>>>>>> f77d6fc94e3148da85bf1c7deab28f33d9c8edf0
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,

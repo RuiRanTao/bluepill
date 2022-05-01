@@ -76,10 +76,3 @@ clean-Core-2f-Src:
 
 .PHONY: clean-Core-2f-Src
 
-clean: clean-Core-2f-Src
-
-clean-Core-2f-Src:
-	-$(RM) ./Core/Src/at24c02.d ./Core/Src/at24c02.o ./Core/Src/buzzer.d ./Core/Src/buzzer.o ./Core/Src/delay.d ./Core/Src/delay.o ./Core/Src/dma.d ./Core/Src/dma.o ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/iic_dup.d ./Core/Src/iic_dup.o ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main10ms.d ./Core/Src/main10ms.o ./Core/Src/mian1ms.d ./Core/Src/mian1ms.o ./Core/Src/rx_analysis.d ./Core/Src/rx_analysis.o ./Core/Src/spi.d ./Core/Src/spi.o ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/tim.d ./Core/Src/tim.o ./Core/Src/timepiece.d ./Core/Src/timepiece.o ./Core/Src/usart.d ./Core/Src/usart.o ./Core/Src/w25q16.d ./Core/Src/w25q16.o
-
-.PHONY: clean-Core-2f-Src
-
