@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 ../Core/Src/buzzer.c:50:6:buzzer_breathe	8	static
 ../Core/Src/buzzer.c:70:6:Sound	16	static
 ../Core/Src/buzzer.c:76:6:play_music	24	static
+=======
+buzzer.c:50:6:buzzer_breathe	8	static
+buzzer.c:70:6:Sound	16	static
+buzzer.c:76:6:play_music	24	static
+>>>>>>> f77d6fc94e3148da85bf1c7deab28f33d9c8edf0

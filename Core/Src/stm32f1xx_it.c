@@ -66,9 +66,15 @@ extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart1_tx;
 extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
+<<<<<<< HEAD
 #define BUFFERSIZE 255	//可接收的�????大数据量
 extern uint8_t Rx_len,bootfirst;
 extern uint8_t ReceiveBuff[BUFFERSIZE]; //接收缓冲�????
+=======
+#define BUFFERSIZE 255	//可接收的�????大数据量
+extern uint8_t Rx_len,bootfirst;
+extern uint8_t ReceiveBuff[BUFFERSIZE]; //接收缓冲�????
+>>>>>>> f77d6fc94e3148da85bf1c7deab28f33d9c8edf0
 uint8_t ReceiveTemp[BUFFERSIZE]={48,53};
 
 /* USER CODE END EV */
@@ -278,6 +284,7 @@ void USART1_IRQHandler(void)
   HAL_UART_IRQHandler(&huart1);
   /* USER CODE BEGIN USART1_IRQn 1 */
 	uint32_t temp;
+<<<<<<< HEAD
 	if(USART1 == huart1.Instance)//判断是否为串�????1中断
 	{
 		if(RESET != __HAL_UART_GET_FLAG(&huart1,UART_FLAG_IDLE))//如果为串�????1空闲
@@ -288,11 +295,27 @@ void USART1_IRQHandler(void)
 			Rx_len =  BUFFERSIZE - temp; //计算串口接收到的数据个数
 //			HAL_UART_Transmit_DMA(&huart1,ReceiveBuff,Rx_len);//发�?�数�????
 //			HAL_UART_Transmit_DMA(&huart1,ReceiveTemp,Rx_len);//发�?�数�????
+=======
+	if(USART1 == huart1.Instance)//判断是否为串�????1中断
+	{
+		if(RESET != __HAL_UART_GET_FLAG(&huart1,UART_FLAG_IDLE))//如果为串�????1空闲
+		{
+			__HAL_UART_CLEAR_IDLEFLAG(&huart1);//清除中断标志
+			HAL_UART_DMAStop(&huart1);//停止DMA接收
+			temp  = __HAL_DMA_GET_COUNTER(&hdma_usart1_rx);//获取DMA当前还有多少未填�????
+			Rx_len =  BUFFERSIZE - temp; //计算串口接收到的数据个数
+//			HAL_UART_Transmit_DMA(&huart1,ReceiveBuff,Rx_len);//发�?�数�????
+//			HAL_UART_Transmit_DMA(&huart1,ReceiveTemp,Rx_len);//发�?�数�????
+>>>>>>> f77d6fc94e3148da85bf1c7deab28f33d9c8edf0
 
 			rx_analysis(Rx_len, ReceiveBuff);
 
 			Rx_len=0;//接收数据长度清零
+<<<<<<< HEAD
 			HAL_UART_Receive_DMA(&huart1,ReceiveBuff,BUFFERSIZE);//�????启下�????次接�????
+=======
+			HAL_UART_Receive_DMA(&huart1,ReceiveBuff,BUFFERSIZE);//�????启下�????次接�????
+>>>>>>> f77d6fc94e3148da85bf1c7deab28f33d9c8edf0
 		}
 
 	}
