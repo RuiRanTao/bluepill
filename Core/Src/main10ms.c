@@ -11,6 +11,7 @@ void main10ms()
 {
 	if(flag_10ms == 1)
 	{
+//		printf("dfsdgf");
 		flag_10ms = 0;
 		if(rx_flag == 0)
 		{

@@ -118,14 +118,12 @@ int main(void)
 
 //	注意：上方的MX_DMA_Init();和MX_USART1_UART_Init();这两个函数在自动生成代码要要手动调换顺序
 	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);//使能串口1 IDLE中断
-	/*第二个参数目前为数组 如果为变量需要加取地�??????????????????????????�??????????????????????????*/
+	/*第二个参数目前为数组 如果为变量需要加取地*/
 	HAL_UART_Receive_DMA(&huart1,ReceiveBuff,BUFFERSIZE);//使能接收
 	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_2);
 //	  HAL_Delay_us_init(72);
 //	  HAL_RCC_GetHCLKFreq()/1000000;		// 1us中断一次，即HAL_Delay函数延时基准为1us
 	HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);  // 配置并启动系统滴答定时器
-
-//  TIM_PWM_START();
 
   /* USER CODE END 2 */
 

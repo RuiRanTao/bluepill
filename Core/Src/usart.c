@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -27,7 +27,7 @@
 
 PUTCHAR_PROTOTYPE
 {
-    //注意下面第一个参数是&husart1，因为cubemx配置了串�???1自动生成�???
+    //注意下面第一个参数是&husart1，因为cubemx配置了串�???1自动生成�???
     HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
     return ch;
 }
